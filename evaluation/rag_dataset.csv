@@ -1,0 +1,25 @@
+id,question,ground_truth,expected_source,category,question_type,answerable
+Q001,What is the refund period?,Customers can request a refund within 30 days of delivery.,refund_policy.txt,refund,single_fact,true
+Q002,Are digital products refundable?,Digital products are non-refundable once downloaded.,refund_policy.txt,refund,single_fact,true
+Q003,How long does express shipping take and what does it cost?,Express shipping takes 2 business days and costs $14.99.,shipping_policy.txt,shipping,multi_fact,true
+Q004,Which countries do you ship to?,"GubbisCart ships to the United States, Canada, and the United Kingdom only.",shipping_policy.txt,shipping,single_fact,true
+Q005,Can I get my money back if my order arrives broken?,"Damaged items are eligible for a full refund including shipping costs, if reported within 48 hours of delivery.",refund_policy.txt,refund,paraphrased,true
+Q006,If I spend $80 how much is shipping?,Orders above $75 qualify for free standard shipping.,shipping_policy.txt,shipping,paraphrased,true
+Q007,Do you sell gift cards?,I don't have enough information to answer that.,,out_of_scope,out_of_scope,false
+Q008,What is the cost of standard shipping?,Standard shipping costs 600 INR,shipping_policy.txt,shipping,single_fact,true
+Q009,What is the cost of Express shipping?,Express shipping costs 1000 INR,shipping_policy.txt,shipping,single_fact,true
+Q010,Do you ship to Bangalore?,Yes,shipping_policy.txt,shipping,single_fact,true
+Q011,What is the constaraint for password?,Password should be of minimum 6 characters and Password should contain one Capital letter one small letter one Number and special characters,account_security.txt,security,multi_fact,true
+Q012,My electronic product is damaged can I get refund?,Digital products are not eleigible for refund,refund_policy.txt,refund,single_fact,true
+Q013,Customer support is visible on Saturday?,Support is available on Saturdays from 10:00 AM to 4:00 PM IST.,support_faq.txt,support,single_fact,true
+Q014,What is the mimimum amount for free shipping?,Orders above 5000 INR qualify for free shipping.,shipping_policy.txt,shipping,single_fact,true
+Q015,I Have not received the prodcut Where is my Order?,No Answer ,,out_of_scope,out_of_scope,false
+Q016,I have returned the order but my refund is not yet initiated?,Sorry for the delay refund will be initiated within next 2 days,refund_policy.txt,refund,paraphrased,true
+Q017,Can i contact support via Phone?,You can reach out to us via Email (support@gubbicart.com)and  Live Chat (available on our website) or Phone (1-800-GUBBICART).,support_faq.txt,support,multi_fact,true
+Q018,My product is damaged by dropping it on flooor can I get refund?,The warranty does not cover damage resulting from accidents or  misuse or  unauthorized modifications or external causes such as water damage or  fire or physical drops,refund_policy.txt,refund,single_fact,true
+Q019,What is the delivery time for a product?,Standard Shipping Takes 3-5 Business Days and cost is 600 INR,shipping_policy.txt,shipping,paraphrased,true
+Q020,Is there any return policy?,Yes we offer 30 days return policy,refund_policy.txt,refund,single_fact,true
+Q021,Where can i find the order details?,The question is ambiguou The assistant should ask for clarification or say it does not have enough information and must not invent an answer,,out_of_scope,out_of_scope,false
+Q022,I am not able to login in to my account?,Please reset your password by clicking on the 'Forgot Password' link on the login page You will receive an email with instructions to create a new password,account_security.txt,security,paraphrased,true
+Q023,Can you provide support for technical issues?,Yes we provide support for technical issues,support_faq.txt,support,single_fact,true
+Q024,Do you offer customization of products?,No Answer ,,out_of_scope,out_of_scope,false

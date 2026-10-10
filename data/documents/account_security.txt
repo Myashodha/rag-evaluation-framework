@@ -1,0 +1,10 @@
+GubbisCart Account Security Policy
+
+Regularly update your password every 90 days to maintain Security
+Password should be of minimum 6 characters 
+Password should contain one Capital letter, one small letter,one Number and special characters
+Password should not be shared with anyone
+if you suspecious about any account activity please change your password immediately and contact customer support
+For password reset raise request with customer support
+Account will be locked after 3 failed attempts
+2FA Autentication is supported 

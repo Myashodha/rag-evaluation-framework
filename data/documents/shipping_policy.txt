@@ -1,0 +1,7 @@
+GubbisCart Shipping Policy
+
+Standard Shipping Takes 3-5 Business Days and cost is 600 INR
+Express Shipping Takes 1-2 Business Days and cost is 1000 INR
+Orders above 5000 INR qualify for free shipping
+We currently ship to Karnataka ,Hyderabad,Maharashtra only
+Orders placed after 2 PM IST are processed next Business Day
