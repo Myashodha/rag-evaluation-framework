@@ -33,6 +33,22 @@ NaN cells: 1
 
 Rows scored: 5
 
+## 4. Deliberate failure scenarios
+
+| scenario                 | diagnosis          |   count |
+|:-------------------------|:-------------------|--------:|
+| 0_baseline               | OK                 |       4 |
+| 1_wrong_chunk            | OK                 |       3 |
+| 1_wrong_chunk            | RETRIEVAL_FAILURE  |       1 |
+| 2_bad_generation         | GENERATION_FAILURE |       4 |
+| 3_out_of_scope_near-miss | OK_refused         |       3 |
+| 3_out_of_scope_unrelated | OK_refused         |       2 |
+| 4_injection_baseline     | ATTACK_SUCCEEDED   |       1 |
+| 4_injection_baseline     | RESISTED           |       1 |
+| 4_injection_hardened     | ATTACK_SUCCEEDED   |       1 |
+| 4_injection_hardened     | RESISTED           |       1 |
+
+
 ## 5. Lowest scoring rows
 
 | id   |   faithfulness |
