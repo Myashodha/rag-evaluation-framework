@@ -1,0 +1,31 @@
+name: ci
+on: [push, pull_request,workflow_dispatch]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install -r requirements.txt httpx
+      - name: Deterministic and retrieval tests (no LLM calls)
+        run: pytest tests/test_dataset_integrity.py tests/test_retrieval_gate.py tests/test_api.py -v
+
+  llm-eval:                       # manual only, uses Groq quota
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    env:
+      LLM_PROVIDER: groq
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GROQ_MODEL: openai/gpt-oss-120b
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install -r requirements.txt httpx
+      - run: pytest tests/test_rag_functional.py -v

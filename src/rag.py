@@ -13,14 +13,14 @@ NO_ANSWER = "I don't have enough information to answer that."
 
 class RAGPipeline:
     def __init__(self, docs_dir=DEFAULT_DOCS_DIR, chunk_size=300, chunk_overlap=50,
-                 top_k=3, collection_name="GubbisCart", llm=None):
+                 top_k=3, collection_name="GubbisCart", llm=None, embedder=None):
         self.docs_dir = Path(docs_dir)
         self.top_k = top_k
         self.collection_name = collection_name
         self.splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size, chunk_overlap=chunk_overlap
         )
-        self.embedder = HuggingFaceEmbeddings(
+        self.embedder = embedder or HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
         self.llm = llm or get_llm()
@@ -72,6 +72,9 @@ class RAGPipeline:
         context = "\n\n".join(f"[Source: {r['source']}]\n{r['text']}" for r in retrieved)
         return f"""You are a customer support assistant for Gubbiscart.
 Answer the question using ONLY the context below.
+Related information is NOT an answer. Do not give general shipping times, contact details,
+   or policy summaries when the user asks about something the context does not cover
+   (for example the status or location of a specific order, or where to find order details).
 If the context does not contain the answer, reply exactly: "{NO_ANSWER}"
 Be concise.
 
